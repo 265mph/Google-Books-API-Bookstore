@@ -84,14 +84,22 @@ nav .bookstore-logo h2 {
     border-radius: 0.2rem;
     font-family: Montserrat;
 }
-
+.password-input-container{
+    position: relative;
+}
 .form-section .input-fields .view-password {
     margin-left: -2rem;
-    transform: translateY(0.2rem);
+    /* transform: translateY(0.2rem); */
     cursor: pointer;
     color: #002c83;
+    position: absolute;
+    bottom: 25px;
+    right: 10px;
 }
 
+.form-section .login-button {
+    text-align: center;
+}
 .form-section .login-button button {
     background: #ea6258;
     color: #ffff;

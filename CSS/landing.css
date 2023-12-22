@@ -43,7 +43,20 @@ nav .bookstore-logo h2 {
     color: #002c83;
 }
 
-
+nav .login-section .logout-btn{
+    background: #e61f10;
+    color: #ffff;
+    box-shadow: 0 0.2rem 0.2rem #aaaaaa;
+    padding: 0.49rem 0.9rem;
+    max-height: 2rem;
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 0.8rem;
+    line-height: 140%;
+    border-radius: .2rem;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
 nav .login-section a:nth-child(1) {
     background: #ea6258;
     color: #ffff;

@@ -25,16 +25,20 @@
 
             <form class="input-fields">
                 <p>Username</p>
-                <input type="text" placeholder="Username">
-
-                <p>Password</p>
-                <input type="password" name="" id="password-input" placeholder="Password">
-                <ion-icon class="view-password" name="eye" onclick="togglePasswordVisibility()"></ion-icon>
+                <input type="text" placeholder="Username" name="username" id="username">
+                <div class="password-input-container">
+                      <p>Password</p>
+                <input type="password" placeholder="Password" name="password" id="password" >
+                <ion-icon class="view-password" name="eye" onclick="togglePasswordVisibility()"></ion-icon> 
+                 
+                </div>
+              
+                <div class="login-button">
+                <button type="button" onclick="login()" id="login_btn">Login</button>
+            </div>
             </form>
 
-            <div class="login-button">
-                <button>Login</button>
-            </div>
+          
 
             <p>Don't have an account? <a href="register.html">Click Here</a></p>
         </div>
