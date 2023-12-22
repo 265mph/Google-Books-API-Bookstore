@@ -53,49 +53,40 @@ function confirmPasswordVisibility() {
 //register
 
 
-function saveData(){
-
-    let username,password,confirm_password;
+function saveData() {
+    let username, password, confirm_password;
     username = document.getElementById("username").value;
     password = document.getElementById("password").value;
     confirm_password = document.getElementById("confirm_password").value;
 
-    
-    
+    // Array to store registered users
+    let user_records = JSON.parse(localStorage.getItem("users")) ? JSON.parse(localStorage.getItem("users")) : [];
 
-    // localStorage.setItem("username",username)
-    // localStorage.setItem("password",password)
-    // localStorage.setItem("confirm_password",confirm_password)
-
-
-
-
-    //array to store registered users
-
-    let user_records = new Array();
-    user_records= JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
-    if(user_records.some((v)=>{
-        return v.username==username
-    })){
-            alert("Username already exits")
-    }
-    else{
-        user_records.push(
-            {
-                "username":username,
-                "password":password,
+    // Check if username already exists
+    if (user_records.some((v) => {
+        return v.username == username;
+    })) {
+        alert("Username already exists");
+    } else {
+        // Check if password and confirm_password match
+        if (password !== confirm_password) {
+            alert("Password and Confirm Password do not match, please try again");
+        } else {
+            // Registration successful
+            user_records.push({
+                "username": username,
+                "password": password,
                 "confirm_password": confirm_password
-            }
-        )
+            });
+            alert("Registration successful");
+            window.location.href = "landing.html";
 
-        //store the user data in localstorage
-        // stringify converts objects to string
-        localStorage.setItem("users",JSON.stringify(user_records));
+            // Store the user data in local storage
+            // Stringify converts objects to a string
+            localStorage.setItem("users", JSON.stringify(user_records));
+        }
     }
 }
-
-
-
 
 
 
